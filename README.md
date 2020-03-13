@@ -5,7 +5,7 @@ https://www.pyimagesearch.com/2020/02/03/how-to-use-opencvs-dnn-module-with-nvid
 ## Cuda 10 Installation Ubuntu 18.04
 https://medium.com/@exesse/cuda-10-1-installation-on-ubuntu-18-04-lts-d04f89287130
 
-#### Install v4l-utils and gv4l2
+## Install v4l-utils and gv4l2  for USB Camera
 $ sudo apt-get install v4l-utils
 
 $ sudo apt-get install qv4l2
