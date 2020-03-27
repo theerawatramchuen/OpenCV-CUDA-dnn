@@ -56,7 +56,7 @@ while True:
                 confidence = detections[0, 0, i, 2]
 
     		# Filter predictions by confidence:
-                if confidence > 0.1:
+                if confidence > 0.6:
         		# Get the class label:
                         class_id = int(detections[0, 0, i, 1])
 
@@ -77,10 +77,11 @@ while True:
                         yRightTop = int(heightFactor * yRightTop)
 
         		# Draw rectangle:
-                        cv2.rectangle(image, (xLeftBottom, yLeftBottom), (xRightTop, yRightTop), (0, 255, 0), 2)
+                        if class_id == 15:
+                                cv2.rectangle(image, (xLeftBottom, yLeftBottom), (xRightTop, yRightTop), (0, 255, 0), 2)
 
         		# Draw label and confidence:
-                        if class_id in class_names:
+                        if class_id == 15: #if class_id in class_names:
                                 label = class_names[class_id] + ": " + str(confidence)
                                 labelSize, baseLine = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
                                 yLeftBottom = max(yLeftBottom, labelSize[1])
